@@ -23,21 +23,4 @@ object ReaderMonad extends App {
         .getOrElse(Reader[Db, Boolean](_ => false))
     } yield passwordExists
   }
-
-  val users = Map(
-    1 -> "dade",
-    2 -> "kate",
-    3 -> "margo"
-  )
-
-  val passwords = Map(
-    "dade" -> "zerocool",
-    "kate" -> "acidburn",
-    "margo" -> "secret"
-  )
-
-  val db = Db(users, passwords)
-
-  println(checkLogin(1, "zerocool").run(db))
-  println(!checkLogin(4, "davinci").run(db))
 }
