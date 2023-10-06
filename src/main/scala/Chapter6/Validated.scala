@@ -41,4 +41,19 @@ object Validated extends App {
       case false => Left(List(s"$entry must be non-negative"))
     }
   }
+
+  println(readName(Map("name" -> "Dade Murphy")))
+  // res41: FailFast[String] = Right(Dade Murphy)
+  println(readName(Map("name" -> "")))
+  // res42: FailFast[String] = Left(List(name cannot be blank))
+  println(readName(Map()))
+  // res43: FailFast[String] = Left(List(name field not specified))
+  println(readAge(Map("age" -> "11")))
+  // res44: FailFast[Int] = Right(11)
+  println(readAge(Map("age" -> "-1")))
+  // res45: FailFast[Int] = Left(List(age must be non-negative))
+  println(readAge(Map()))
+
+  println(readUser(Map("name" -> "Dave", "age" -> "37")))
+  println(readUser(Map("age" -> "-1")))
 }
