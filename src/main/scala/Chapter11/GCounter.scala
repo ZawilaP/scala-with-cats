@@ -1,6 +1,4 @@
 package Chapter11
-
-import Chapter11.CRDT.BoundedSemiLattice
 import cats.implicits.{catsSyntaxSemigroup, toFoldableOps}
 import cats.kernel.CommutativeMonoid
 
