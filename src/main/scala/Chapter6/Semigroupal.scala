@@ -5,7 +5,7 @@ import cats.syntax.flatMap._
 import cats.syntax.functor._
 import scala.language.higherKinds
 
-object Semigroupal extends App{
+object Semigroupal extends App {
   def product[M[_]: Monad, A, B](x: M[A], y: M[B]): M[(A, B)] =
     for {
       a <- x
